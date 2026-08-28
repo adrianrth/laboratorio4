@@ -1,0 +1,468 @@
+{
+  "info": {
+    "name": "APIs REST - LaboratorioV",
+    "description": "Coleccion de pruebas para las 10 APIs REST del laboratorio (Spring Boot + Maven, CRUD en memoria).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Productos",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/productos", "host": ["{{base_url}}"], "path": ["api", "productos"] }
+          }
+        },
+        {
+          "name": "GET por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/productos/1", "host": ["{{base_url}}"], "path": ["api", "productos", "1"] }
+          }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Teclado Mecanico\",\n  \"precio\": 55.00,\n  \"categoria\": \"Tecnologia\"\n}" },
+            "url": { "raw": "{{base_url}}/api/productos", "host": ["{{base_url}}"], "path": ["api", "productos"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Teclado Mecanico RGB\",\n  \"precio\": 59.90,\n  \"categoria\": \"Tecnologia\"\n}" },
+            "url": { "raw": "{{base_url}}/api/productos/1", "host": ["{{base_url}}"], "path": ["api", "productos", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"precio\": 49.99\n}" },
+            "url": { "raw": "{{base_url}}/api/productos/1", "host": ["{{base_url}}"], "path": ["api", "productos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{base_url}}/api/productos/1", "host": ["{{base_url}}"], "path": ["api", "productos", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 Estudiantes",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/estudiantes", "host": ["{{base_url}}"], "path": ["api", "estudiantes"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/estudiantes/1", "host": ["{{base_url}}"], "path": ["api", "estudiantes", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Fernando\",\n  \"apellido\": \"Ortiz\",\n  \"carrera\": \"Ingenieria Civil\",\n  \"edad\": 21\n}" },
+            "url": { "raw": "{{base_url}}/api/estudiantes", "host": ["{{base_url}}"], "path": ["api", "estudiantes"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Fernando\",\n  \"apellido\": \"Ortiz Paredes\",\n  \"carrera\": \"Ingenieria Civil\",\n  \"edad\": 22\n}" },
+            "url": { "raw": "{{base_url}}/api/estudiantes/1", "host": ["{{base_url}}"], "path": ["api", "estudiantes", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"edad\": 22\n}" },
+            "url": { "raw": "{{base_url}}/api/estudiantes/1", "host": ["{{base_url}}"], "path": ["api", "estudiantes", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/estudiantes/1", "host": ["{{base_url}}"], "path": ["api", "estudiantes", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "03 Libros",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/libros", "host": ["{{base_url}}"], "path": ["api", "libros"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/libros/1", "host": ["{{base_url}}"], "path": ["api", "libros", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Fahrenheit 451\",\n  \"autor\": \"Ray Bradbury\",\n  \"genero\": \"Ciencia Ficcion\",\n  \"precio\": 14.50\n}" },
+            "url": { "raw": "{{base_url}}/api/libros", "host": ["{{base_url}}"], "path": ["api", "libros"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Fahrenheit 451\",\n  \"autor\": \"Ray Bradbury\",\n  \"genero\": \"Distopia\",\n  \"precio\": 13.00\n}" },
+            "url": { "raw": "{{base_url}}/api/libros/1", "host": ["{{base_url}}"], "path": ["api", "libros", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"precio\": 12.00\n}" },
+            "url": { "raw": "{{base_url}}/api/libros/1", "host": ["{{base_url}}"], "path": ["api", "libros", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/libros/1", "host": ["{{base_url}}"], "path": ["api", "libros", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "04 Empleados",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/empleados", "host": ["{{base_url}}"], "path": ["api", "empleados"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/empleados/1", "host": ["{{base_url}}"], "path": ["api", "empleados", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Camila Reyes\",\n  \"puesto\": \"Disenadora UX\",\n  \"salario\": 1700.00,\n  \"departamento\": \"Tecnologia\"\n}" },
+            "url": { "raw": "{{base_url}}/api/empleados", "host": ["{{base_url}}"], "path": ["api", "empleados"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Camila Reyes\",\n  \"puesto\": \"Lider de Diseno UX\",\n  \"salario\": 1900.00,\n  \"departamento\": \"Tecnologia\"\n}" },
+            "url": { "raw": "{{base_url}}/api/empleados/1", "host": ["{{base_url}}"], "path": ["api", "empleados", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"salario\": 1850.00\n}" },
+            "url": { "raw": "{{base_url}}/api/empleados/1", "host": ["{{base_url}}"], "path": ["api", "empleados", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/empleados/1", "host": ["{{base_url}}"], "path": ["api", "empleados", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "05 Peliculas",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/peliculas", "host": ["{{base_url}}"], "path": ["api", "peliculas"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/peliculas/1", "host": ["{{base_url}}"], "path": ["api", "peliculas", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Interstellar\",\n  \"director\": \"Christopher Nolan\",\n  \"genero\": \"Ciencia Ficcion\",\n  \"anio\": 2014\n}" },
+            "url": { "raw": "{{base_url}}/api/peliculas", "host": ["{{base_url}}"], "path": ["api", "peliculas"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Interstellar\",\n  \"director\": \"Christopher Nolan\",\n  \"genero\": \"Drama\",\n  \"anio\": 2014\n}" },
+            "url": { "raw": "{{base_url}}/api/peliculas/1", "host": ["{{base_url}}"], "path": ["api", "peliculas", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"anio\": 2015\n}" },
+            "url": { "raw": "{{base_url}}/api/peliculas/1", "host": ["{{base_url}}"], "path": ["api", "peliculas", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/peliculas/1", "host": ["{{base_url}}"], "path": ["api", "peliculas", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "06 Cursos",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/cursos", "host": ["{{base_url}}"], "path": ["api", "cursos"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/cursos/1", "host": ["{{base_url}}"], "path": ["api", "cursos", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Inteligencia Artificial\",\n  \"descripcion\": \"Fundamentos de IA y ML\",\n  \"creditos\": 4,\n  \"modalidad\": \"Virtual\"\n}" },
+            "url": { "raw": "{{base_url}}/api/cursos", "host": ["{{base_url}}"], "path": ["api", "cursos"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Inteligencia Artificial Aplicada\",\n  \"descripcion\": \"IA, ML y casos practicos\",\n  \"creditos\": 5,\n  \"modalidad\": \"Hibrido\"\n}" },
+            "url": { "raw": "{{base_url}}/api/cursos/1", "host": ["{{base_url}}"], "path": ["api", "cursos", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"modalidad\": \"Presencial\"\n}" },
+            "url": { "raw": "{{base_url}}/api/cursos/1", "host": ["{{base_url}}"], "path": ["api", "cursos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/cursos/1", "host": ["{{base_url}}"], "path": ["api", "cursos", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "07 Vehiculos",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/vehiculos", "host": ["{{base_url}}"], "path": ["api", "vehiculos"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/vehiculos/1", "host": ["{{base_url}}"], "path": ["api", "vehiculos", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"marca\": \"Kia\",\n  \"modelo\": \"Sportage\",\n  \"anio\": 2023,\n  \"precio\": 26500.00\n}" },
+            "url": { "raw": "{{base_url}}/api/vehiculos", "host": ["{{base_url}}"], "path": ["api", "vehiculos"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"marca\": \"Kia\",\n  \"modelo\": \"Sportage EX\",\n  \"anio\": 2024,\n  \"precio\": 28900.00\n}" },
+            "url": { "raw": "{{base_url}}/api/vehiculos/1", "host": ["{{base_url}}"], "path": ["api", "vehiculos", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"precio\": 25000.00\n}" },
+            "url": { "raw": "{{base_url}}/api/vehiculos/1", "host": ["{{base_url}}"], "path": ["api", "vehiculos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/vehiculos/1", "host": ["{{base_url}}"], "path": ["api", "vehiculos", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "08 Tareas",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/tareas", "host": ["{{base_url}}"], "path": ["api", "tareas"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/tareas/1", "host": ["{{base_url}}"], "path": ["api", "tareas", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Enviar propuesta\",\n  \"descripcion\": \"Enviar propuesta comercial al cliente\",\n  \"prioridad\": \"ALTA\",\n  \"completada\": false\n}" },
+            "url": { "raw": "{{base_url}}/api/tareas", "host": ["{{base_url}}"], "path": ["api", "tareas"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"titulo\": \"Enviar propuesta actualizada\",\n  \"descripcion\": \"Enviar propuesta comercial revisada al cliente\",\n  \"prioridad\": \"MEDIA\",\n  \"completada\": false\n}" },
+            "url": { "raw": "{{base_url}}/api/tareas/1", "host": ["{{base_url}}"], "path": ["api", "tareas", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"completada\": true\n}" },
+            "url": { "raw": "{{base_url}}/api/tareas/1", "host": ["{{base_url}}"], "path": ["api", "tareas", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/tareas/1", "host": ["{{base_url}}"], "path": ["api", "tareas", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "09 Clientes",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/clientes", "host": ["{{base_url}}"], "path": ["api", "clientes"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/clientes/1", "host": ["{{base_url}}"], "path": ["api", "clientes", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Gabriel\",\n  \"apellido\": \"Herrera\",\n  \"correo\": \"gabriel.herrera@mail.com\",\n  \"telefono\": \"8096789012\"\n}" },
+            "url": { "raw": "{{base_url}}/api/clientes", "host": ["{{base_url}}"], "path": ["api", "clientes"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Gabriel\",\n  \"apellido\": \"Herrera Cruz\",\n  \"correo\": \"gabriel.herrera.cruz@mail.com\",\n  \"telefono\": \"8097890123\"\n}" },
+            "url": { "raw": "{{base_url}}/api/clientes/1", "host": ["{{base_url}}"], "path": ["api", "clientes", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"telefono\": \"8097890123\"\n}" },
+            "url": { "raw": "{{base_url}}/api/clientes/1", "host": ["{{base_url}}"], "path": ["api", "clientes", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/clientes/1", "host": ["{{base_url}}"], "path": ["api", "clientes", "1"] } }
+        }
+      ]
+    },
+    {
+      "name": "10 Pedidos",
+      "item": [
+        {
+          "name": "GET todos",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/pedidos", "host": ["{{base_url}}"], "path": ["api", "pedidos"] } }
+        },
+        {
+          "name": "GET por ID",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{base_url}}/api/pedidos/1", "host": ["{{base_url}}"], "path": ["api", "pedidos", "1"] } }
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"cliente\": \"Gabriel Herrera\",\n  \"producto\": \"Silla Ergonomica\",\n  \"cantidad\": 2,\n  \"total\": 240.00,\n  \"estado\": \"PENDIENTE\"\n}" },
+            "url": { "raw": "{{base_url}}/api/pedidos", "host": ["{{base_url}}"], "path": ["api", "pedidos"] }
+          }
+        },
+        {
+          "name": "PUT",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"cliente\": \"Gabriel Herrera\",\n  \"producto\": \"Silla Ergonomica\",\n  \"cantidad\": 3,\n  \"total\": 360.00,\n  \"estado\": \"PENDIENTE\"\n}" },
+            "url": { "raw": "{{base_url}}/api/pedidos/1", "host": ["{{base_url}}"], "path": ["api", "pedidos", "1"] }
+          }
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"estado\": \"ENVIADO\"\n}" },
+            "url": { "raw": "{{base_url}}/api/pedidos/1", "host": ["{{base_url}}"], "path": ["api", "pedidos", "1"] }
+          }
+        },
+        {
+          "name": "DELETE",
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{base_url}}/api/pedidos/1", "host": ["{{base_url}}"], "path": ["api", "pedidos", "1"] } }
+        }
+      ]
+    }
+  ]
+}
