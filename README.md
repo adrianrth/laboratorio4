@@ -106,4 +106,4 @@ La coleccion `APIs REST - LaboratorioV.postman_collection.json` (carpeta `postma
 
 ## Repositorio
 
-Enlace al repositorio en GitHub: `<pendiente - agregar URL del repositorio>`
+Enlace al repositorio en GitHub: https://github.com/adrianrth/laboratorio4
